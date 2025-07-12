@@ -9,7 +9,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 export default defineConfig({
-  base: '/visorapro/', // nome do repositório
+  base: '/visorapro/', // nome do repositório para GitHub Pages
   plugins: [
     react(),
     runtimeErrorOverlay(),
@@ -23,7 +23,7 @@ export default defineConfig({
   },
   root: path.resolve(__dirname, "client"),
   build: {
-    outDir: path.resolve(__dirname, "dist"), // Gera dist na raiz do projeto
+    outDir: path.resolve(__dirname, "dist"),
     emptyOutDir: true,
   },
 });
