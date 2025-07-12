@@ -5,17 +5,15 @@ import path, { dirname } from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 import { fileURLToPath } from "url";
 
-// Para caminhos absolutos
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 export default defineConfig({
-  base: '/visorapro/', // <- nome do seu repositório
+  base: '/visorapro/', // nome do repositório
   plugins: [
     react(),
     runtimeErrorOverlay(),
     themePlugin(),
-    // Removi o plugin cartographer, pois await não é suportado fora de função async
   ],
   resolve: {
     alias: {
@@ -25,7 +23,7 @@ export default defineConfig({
   },
   root: path.resolve(__dirname, "client"),
   build: {
-    outDir: path.resolve(__dirname, "dist"),
+    outDir: path.resolve(__dirname, "dist"), // Gera dist na raiz do projeto
     emptyOutDir: true,
   },
 });
